@@ -3,18 +3,18 @@ public abstract class Personagem {
     ClassePersonagem classe;
     int nivel;
     int pontosDeVida;
-    double poderbase;
+    double poderBase;
 
     public enum ClassePersonagem {
         GUERREIRO, MAGO, ARQUEIRO
     }
 
-    public Personagem(String nome, ClassePersonagem classe, int nivel, int pontosDeVida, double poderbase) {
+    public Personagem(String nome, ClassePersonagem classe, int nivel, int pontosDeVida, double poderBase) {
         this.nome = nome;
         this.classe = classe;
         this.nivel = nivel;
         this.pontosDeVida = pontosDeVida;
-        this.poderbase = poderbase;
+        this.poderBase = poderBase;
     }
 
     public void exibirStatus() {
@@ -23,7 +23,19 @@ public abstract class Personagem {
         System.out.println("Classe: " + classe);
         System.out.println("Nível: " + nivel);
         System.out.println("Pontos de Vida: " + pontosDeVida);
-        System.out.println("Poder Base: " + poderbase);
+        System.out.println("Poder Base: " + poderBase);
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public double getpoderBase() {
+        return poderBase;
+    }
+
+    public double calcularPoderTotal() {
+        return nivel * poderBase;
     }
 
     public String getDescricaoBase() {
@@ -31,4 +43,6 @@ public abstract class Personagem {
     }
 
     public abstract void usarHabilidadeEspecial();
+
+    public abstract String exibirDescricaoCompleta();
 }

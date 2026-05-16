@@ -1,8 +1,8 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Personagem> personagens = new ArrayList<Personagem>();
+        List<Personagem> personagens = new ArrayList<Personagem>();
         Personagem personagem1 = new Guerreiro("Arthus", 10, 15, 100, 50.0);
         Personagem personagem2 = new Mago("Elenara", 20, 20, 80, 70.0);
 
@@ -13,5 +13,9 @@ public class Main {
             p.exibirStatus();
             p.usarHabilidadeEspecial();
         }
+
+        Grupo grupo = new Grupo(personagens);
+        grupo.exibirPersonagens();
+        grupo.batalhar(personagem1, personagem2);
     }
 }
