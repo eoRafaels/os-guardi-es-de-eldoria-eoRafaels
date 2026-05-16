@@ -1,9 +1,17 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        Personagem personagem1 = new Personagem("Aragorn", Personagem.ClassePersonagem.GUERREIRO, 10, 100, 50.0);
-        Personagem personagem2 = new Personagem("Gandalf", Personagem.ClassePersonagem.MAGO, 20, 80, 70.0);
+        ArrayList<Personagem> personagens = new ArrayList<Personagem>();
+        Personagem personagem1 = new Guerreiro("Arthus", 10, 15, 100, 50.0);
+        Personagem personagem2 = new Mago("Elenara", 20, 20, 80, 70.0);
 
-        personagem1.exibirStatus();
-        personagem2.exibirStatus();
+        personagens.add(personagem1);
+        personagens.add(personagem2);
+
+        for (Personagem p : personagens) {
+            p.exibirStatus();
+            p.usarHabilidadeEspecial();
+        }
     }
 }
