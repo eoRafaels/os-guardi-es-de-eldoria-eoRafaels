@@ -1,10 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        Personagem heroi1 = new Personagem("Arthus", "Guerreiro", 1, 100, 10.5);
+        Personagem personagem1 = new Personagem("Aragorn", Personagem.ClassePersonagem.GUERREIRO, 10, 100, 50.0);
+        Personagem personagem2 = new Personagem("Gandalf", Personagem.ClassePersonagem.MAGO, 20, 80, 70.0);
 
-        .
-        .
-        .
-
+        personagem1.exibirStatus();
+        personagem2.exibirStatus();
     }
 }
